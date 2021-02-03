@@ -1,0 +1,15 @@
+:root {
+  --color-primary: hsl(220, 90%, 56%);
+  --color-primary-h: 220;
+  --color-primary-s: 90%;
+  --color-primary-l: 56%;
+}
+
+.header {
+  background-color: hsla(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l), 1);
+}
+
+.card-cont {
+  background-color: hsl(var(--color-primary-h), var(--color-primary-s), calc(var(--color-primary-l) - 10%));
+}
+/*# sourceMappingURL=style.css.map */

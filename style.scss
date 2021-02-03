@@ -1,0 +1,25 @@
+:root {
+    --color-primary: hsl(220, 90%, 56%);
+    --color-primary-h: 220;
+    --color-primary-s: 90%;
+    --color-primary-l: 56%;
+}
+@function customOpacity($color-variable, $opacity) {
+    $color-variable-h: var(#{$color-variable + "-h"});
+    $color-variable-s: var(#{$color-variable + "-s"});
+    $color-variable-l: var(#{$color-variable + "-l"});
+    @return hsla($color-variable-h, $color-variable-s, $color-variable-l, $opacity);
+}
+@function customDarken($color-variable, $value) {
+    $color-variable-h: var(#{$color-variable + "-h"});
+    $color-variable-s: var(#{$color-variable + "-s"});
+    $color-variable-l: calc(var(#{$color-variable + "-l"}) - #{$value+"%"});
+    @return hsl($color-variable-h, $color-variable-s, $color-variable-l);
+}
+
+.header {
+    background-color: customOpacity(--color-primary, 1);
+}
+.card-cont {
+    background-color: customDarken(--color-primary, 10);
+}
